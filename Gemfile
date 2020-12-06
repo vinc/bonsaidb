@@ -18,8 +18,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'turbolinks', '~> 5.2.0'
 gem 'sprockets', '~> 4'
 gem 'sprockets-rails', require: 'sprockets/railtie'
+
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0.alpha3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
