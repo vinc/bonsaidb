@@ -11,13 +11,16 @@ class SpeciesController < ApplicationController
 
   def new
     @species = Species.new
+    authorize @species
   end
 
   def edit
+    authorize @species
   end
 
   def create
     @species = Species.new(species_params)
+    authorize @species
 
     respond_to do |format|
       if @species.save
@@ -31,6 +34,7 @@ class SpeciesController < ApplicationController
   end
 
   def update
+    authorize @species
     respond_to do |format|
       if @species.update(species_params)
         format.html { redirect_to @species, notice: 'Species was successfully updated.' }
@@ -43,6 +47,7 @@ class SpeciesController < ApplicationController
   end
 
   def destroy
+    authorize @species
     @species.destroy
     respond_to do |format|
       format.html { redirect_to species_index_url, notice: 'Species was successfully destroyed.' }

@@ -1,6 +1,8 @@
-<div class="float-right">
-  <%= link_to 'Add', new_species_path, class: 'btn btn-primary', role: 'button' %>
-</div>
+<% if policy(Species).create? %>
+  <div class="float-right">
+    <%= link_to 'Add', new_species_path, class: 'btn btn-primary', role: 'button' %>
+  </div>
+<% end %>
 
 <h1>List of species</h1>
 
