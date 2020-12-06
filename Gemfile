@@ -27,6 +27,8 @@ gem 'bootstrap', '~> 5.0.0.alpha3'
 
 gem 'friendly_id', '~> 5.4.0'
 
+gem 'devise'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
