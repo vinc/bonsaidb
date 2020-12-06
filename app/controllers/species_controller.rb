@@ -52,7 +52,7 @@ class SpeciesController < ApplicationController
   private
 
   def set_species
-    @species = Species.find(params[:id])
+    @species = Species.friendly.find(params[:id])
   end
 
   def species_params
