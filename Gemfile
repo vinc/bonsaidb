@@ -22,14 +22,15 @@ gem 'turbolinks', '~> 5.2.0'
 gem 'sprockets', '~> 4'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
+gem 'friendly_id', '~> 5.4.0'
+
+gem 'pundit'
+
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.alpha3'
 
-gem 'friendly_id', '~> 5.4.0'
-
 gem 'devise'
-
-gem 'pundit'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
