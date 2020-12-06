@@ -4,7 +4,11 @@
   </div>
 <% end %>
 
-<h1>List of species</h1>
+<% if @botanical_group.present? %>
+  <h1>List of <%= @botanical_group.humanize.downcase %> trees</h1>
+<% else %>
+  <h1>List of species</h1>
+<% end %>
 
 <ul class="mt-3">
   <% @species.each do |species| %>

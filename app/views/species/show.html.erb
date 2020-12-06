@@ -7,5 +7,6 @@
 
 <h1><%= @species.name %></h1>
 
-<p><%= @species.name %>, commonly known as <%= @species.common_names %></p>
-
+<p>
+  <%= @species.name %>, commonly known as <%= @species.common_names %>, is <%= @species.botanical_group.start_with?('e') ? 'an' : 'a' %> <%= link_to @species.botanical_group.humanize.downcase, species_index_path('botanical-group' => @species.botanical_group.dasherize) %> tree.
+</p>

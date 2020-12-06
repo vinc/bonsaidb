@@ -4,6 +4,9 @@ class SpeciesController < ApplicationController
 
   def index
     @species = Species.order(:name).all
+
+    @botanical_group = params['botanical-group']&.underscore
+    @species = @species.where(botanical_group: @botanical_group) if @botanical_group.present?
   end
 
   def show
@@ -62,6 +65,6 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.require(:species).permit(:name, :common_names)
+    params.require(:species).permit(:name, :common_names, :botanical_group)
   end
 end
