@@ -13,7 +13,7 @@
 <ul class="mt-3">
   <% @species.each do |species| %>
     <li>
-      <%= link_to species.name, species %>
+      <%= link_to species.botanical_name, species %>
       (<%= species.common_names %>)
     </li>
   <% end %>

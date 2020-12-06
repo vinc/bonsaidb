@@ -1,7 +1,7 @@
 class Species < ApplicationRecord
   extend FriendlyId
 
-  friendly_id :name, use: :slugged
+  friendly_id :botanical_name, use: :slugged
 
   enum botanical_group: [
     :deciduous_broadleaf, :evergreen_broadleaf,

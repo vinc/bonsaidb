@@ -3,7 +3,7 @@ class SpeciesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @species = Species.order(:name).all
+    @species = Species.order(:botanical_name).all
 
     @botanical_group = params['botanical-group']&.underscore
     @species = @species.where(botanical_group: @botanical_group) if @botanical_group.present?
@@ -65,6 +65,6 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.require(:species).permit(:name, :common_names, :botanical_group)
+    params.require(:species).permit(:botanical_group, :botanical_name, :common_names)
   end
 end

@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :name, class: 'form-label' %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= form.label :botanical_group, class: 'form-label' %>
+    <%= form.select(:botanical_group, Species.botanical_groups.keys.map { |g| [g.humanize, g] }, {}, class: 'form-select') %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :botanical_name, class: 'form-label' %>
+    <%= form.text_field :botanical_name, class: 'form-control' %>
   </div>
 
   <div class="mb-3">
     <%= form.label :common_names, class: 'form-label' %>
     <%= form.text_field :common_names, class: 'form-control' %>
-  </div>
-
-  <div class="mb-3">
-    <%= form.label :botanical_group, class: 'form-label' %>
-    <%= form.select(:botanical_group, Species.botanical_groups.keys.map { |g| [g.humanize, g] }, {}, class: 'form-select') %>
   </div>
 
   <div class="">
