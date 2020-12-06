@@ -14,15 +14,15 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand" href="#">BonsaiDB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar-content">
+        <div class="collapse navbar-collapse" id="navbar-menu">
           <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Species</a>
+              <a class="nav-link" href="/species">Species</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Styles</a>
@@ -31,7 +31,7 @@
         </div>
       </div>
     </nav>
-    <div class="container py-5">
+    <div class="container py-3">
       <%= yield %>
     </div>
   </body>

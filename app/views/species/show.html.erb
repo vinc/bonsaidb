@@ -1,0 +1,8 @@
+<div class="float-right">
+  <%= link_to 'Remove', @species, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger mr-2', role: 'button' %>
+  <%= link_to 'Edit', edit_species_path(@species), class: 'btn btn-primary', role: 'button' %>
+</div>
+<h1><%= @species.name %></h1>
+
+<p><%= @species.name %>, commonly known as <%= @species.common_names %></p>
+
