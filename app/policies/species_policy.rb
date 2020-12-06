@@ -6,7 +6,7 @@ class SpeciesPolicy < ApplicationPolicy
   end
 
   def create?
-    user.editor? || user.admin?
+    user&.editor? || user&.admin?
   end
 
   def update?
