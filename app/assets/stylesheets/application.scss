@@ -1,1 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap");
+
+$primary: #0A5;
+$min-contrast-ratio: 3;
+
+$font-family-sans-serif: "Roboto Slab", sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1.1rem;
+
 @import "bootstrap";
+
+.navbar.bg-light {
+  border-bottom: solid 1px $card-border-color;
+}
