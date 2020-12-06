@@ -8,5 +8,8 @@
 <h1><%= @species.botanical_name %></h1>
 
 <p>
-  <%= @species.botanical_name %>, commonly known as <%= @species.common_names %>, is <%= @species.botanical_group.start_with?('e') ? 'an' : 'a' %> <%= link_to @species.botanical_group.humanize.downcase, species_index_path('botanical-group' => @species.botanical_group.dasherize) %> tree.
+  <%= @species.botanical_name %><% if @species.common_names.present? %>, commonly known as <%= humanize_list(@species.common_names) %>,<% end %>
+  is <%= @species.botanical_group.start_with?('e') ? 'an' : 'a' %>
+  <%= link_to @species.botanical_group.humanize.downcase, species_index_path('botanical-group' => @species.botanical_group.dasherize) %>
+  tree.
 </p>
