@@ -1,5 +1,5 @@
 <% if policy(Species).update? %>
-  <div class="float-right">
+  <div class="float-right mt-2">
     <%= link_to 'Remove', @species, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger mr-2', role: 'button' %>
     <%= link_to 'Edit', edit_species_path(@species), class: 'btn btn-primary', role: 'button' %>
   </div>
