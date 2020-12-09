@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_173541) do
+ActiveRecord::Schema.define(version: 2020_12_09_191155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_12_06_173541) do
     t.text "pruning"
     t.text "pinching"
     t.text "wiring"
+    t.boolean "fruits"
+    t.boolean "flowers"
     t.index ["slug"], name: "index_species_on_slug", unique: true
   end
 

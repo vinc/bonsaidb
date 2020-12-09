@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :botanical_group, class: 'form-label' %>
-    <%= form.select(:botanical_group, Species.botanical_groups.keys.map { |g| [g.humanize, g] }, {}, class: 'form-select') %>
+    <%= form.label :common_names, class: 'form-label' %>
+    <%= form.text_field :common_names, class: 'form-control' %>
   </div>
 
   <div class="mb-3">
@@ -22,8 +22,18 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :common_names, class: 'form-label' %>
-    <%= form.text_field :common_names, class: 'form-control' %>
+    <%= form.label :botanical_group, class: 'form-label' %>
+    <%= form.select(:botanical_group, Species.botanical_groups.keys.map { |g| [g.humanize, g] }, {}, class: 'form-select') %>
+  </div>
+
+  <div class="form-check">
+    <%= form.check_box :flowers, class: 'form-check-input' %>
+    <%= form.label :flowers, class: 'form-check-label' %>
+  </div>
+
+  <div class="mb-3 form-check">
+    <%= form.check_box :fruits, class: 'form-check-input' %>
+    <%= form.label :fruits, class: 'form-check-label' %>
   </div>
 
   <% Species.text_attributes.each do |attr| %>

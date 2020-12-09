@@ -24,7 +24,7 @@
       <div class="col mt-3 mt-md-4">
         <div class="card h-100">
           <div class="card-body">
-            <h5 class="card-title"><%= link_to species.botanical_name, species %></h5>
+            <h5 class="card-title"><%= link_to species.botanical_name, species, class: "text-decoration-none" %></h5>
             <% if species.common_names.present? %>
               <h6 class="card-subtitle mb-2 text-muted"><%= split_list(species.common_names).first.capitalize %></h6>
             <% end %>
