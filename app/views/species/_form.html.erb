@@ -26,6 +26,13 @@
     <%= form.text_field :common_names, class: 'form-control' %>
   </div>
 
+  <% Species.text_attributes.each do |attr| %>
+    <div class="mb-3">
+      <%= form.label attr, class: 'form-label' %>
+      <%= form.text_area attr, class: 'form-control' %>
+    </div>
+  <% end %>
+
   <div class="">
     <%= form.submit class: 'btn btn-primary' %>
   </div>

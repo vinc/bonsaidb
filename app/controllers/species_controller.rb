@@ -65,6 +65,6 @@ class SpeciesController < ApplicationController
   end
 
   def species_params
-    params.require(:species).permit(:botanical_group, :botanical_name, :common_names)
+    params.require(:species).permit(%i[botanical_group botanical_name common_names] + Species.text_attributes)
   end
 end
