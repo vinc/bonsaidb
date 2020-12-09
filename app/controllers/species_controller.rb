@@ -3,7 +3,7 @@ class SpeciesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @species = Species.order(:botanical_name).all
+    @species = Species.order(:botanical_name).page(params['page'])
 
     @botanical_group = params['botanical-group']&.underscore
     @species = @species.where(botanical_group: @botanical_group) if @botanical_group.present?

@@ -28,15 +28,13 @@
             <% if species.common_names.present? %>
               <h6 class="card-subtitle mb-2 text-muted"><%= split_list(species.common_names).first.capitalize %></h6>
             <% end %>
-            <p class="card-text">
-              <%= species.botanical_name %><% if species.common_names.present? %>, commonly known as <%= humanize_list(species.common_names) %>,<% end %>
-              is <%= species.botanical_group.start_with?('e') ? 'an' : 'a' %>
-              <%= species.botanical_group.humanize.downcase %>
-              tree.
-            </p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 <% end %>
+
+<div class="mt-4 d-flex justify-content-center">
+  <%= paginate @species %>
+</div>

@@ -23,7 +23,7 @@ gem 'sprockets', '~> 4'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
 gem 'friendly_id', '~> 5.4.0'
-
+gem 'kaminari'
 gem 'pundit'
 
 gem 'jquery-rails'
