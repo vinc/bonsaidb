@@ -10,10 +10,33 @@
   <h1>List of species</h1>
 <% end %>
 
-<ul class="mt-3">
-  <% @species.each do |species| %>
-    <li>
-      <%= link_to species.botanical_name, species %><% if species.common_names.present? %> (<%= split_list(species.common_names).first %>)<% end %>
-    </li>
-  <% end %>
-</ul>
+<% if params["layout"] == "list" %>
+  <ul class="mt-3">
+    <% @species.each do |species| %>
+      <li>
+        <%= link_to species.botanical_name, species %><% if species.common_names.present? %> (<%= split_list(species.common_names).first.capitalize %>)<% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @species.each do |species| %>
+      <div class="col mt-3 mt-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to species.botanical_name, species %></h5>
+            <% if species.common_names.present? %>
+              <h6 class="card-subtitle mb-2 text-muted"><%= split_list(species.common_names).first.capitalize %></h6>
+            <% end %>
+            <p class="card-text">
+              <%= species.botanical_name %><% if species.common_names.present? %>, commonly known as <%= humanize_list(species.common_names) %>,<% end %>
+              is <%= species.botanical_group.start_with?('e') ? 'an' : 'a' %>
+              <%= species.botanical_group.humanize.downcase %>
+              tree.
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
