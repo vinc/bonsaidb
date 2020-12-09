@@ -10,9 +10,9 @@
 <p>
   <%= @species.botanical_name %><% if @species.common_names.present? %>, commonly known as <%= humanize_list(@species.common_names) %>,<% end %>
   is <%= @species.botanical_group.start_with?('e') ? 'an' : 'a' %>
-  <%= link_to @species.botanical_group.humanize.downcase, species_index_path('botanical-group' => @species.botanical_group.dasherize) %>
+  <%= link_to @species.botanical_group.humanize.downcase, species_index_path(filter: @species.botanical_group.dasherize) %>
   <% if @species.fruits? %>
-    fruits-bearing
+    fruit-bearing
   <% elsif @species.flowers? %>
     flowering
   <% end %>

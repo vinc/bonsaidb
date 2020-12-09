@@ -5,8 +5,16 @@ class SpeciesController < ApplicationController
   def index
     @species = Species.order(:botanical_name).page(params['page'])
 
-    @botanical_group = params['botanical-group']&.underscore
-    @species = @species.where(botanical_group: @botanical_group) if @botanical_group.present?
+    @filter = params['filter']&.underscore
+    if Species.botanical_groups.keys.include? @filter
+      @species = @species.where(botanical_group: @filter)
+    elsif @filter == 'fruit_bearing'
+      @species = @species.where(fruits: true)
+    elsif @filter == 'flowering'
+      @species = @species.where(flowers: true)
+    else
+      @filter = nil
+    end
   end
 
   def show
