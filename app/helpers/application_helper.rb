@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def body_class
+    "#{controller_path}/#{action_name}".tr("/", "-")
+  end
+
+  def nav_link_class(target)
+    if target == body_class
+      "nav-link active"
+    else
+      "nav-link"
+    end
+  end
+
   def split_list(list)
     list.split(/, ?/)
   end

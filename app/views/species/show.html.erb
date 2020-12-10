@@ -1,6 +1,6 @@
 <% if policy(Species).update? %>
   <div class="float-right mt-2">
-    <%= link_to 'Remove', @species, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger mr-2', role: 'button' %>
+    <%= link_to 'Delete', @species, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger mr-2', role: 'button' %>
     <%= link_to 'Edit', edit_species_path(@species), class: 'btn btn-primary', role: 'button' %>
   </div>
 <% end %>
@@ -25,3 +25,5 @@
     <p><%= @species.send(attr) %></p>
   <% end %>
 <% end %>
+
+<p class="text-muted mt-5">Last updated on <%= time_tag @species.updated_at.to_date %></p>
