@@ -26,4 +26,7 @@
   <% end %>
 <% end %>
 
-<p class="text-muted mt-5">Last updated on <%= time_tag @species.updated_at.to_date %></p>
+<p class="text-muted mt-5">
+  Last updated on <%= time_tag @species.updated_at.to_date %>
+  <!--by <%# version_author(@species.versions.last).name %>-->
+</p>

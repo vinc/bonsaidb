@@ -9,6 +9,10 @@ module ApplicationHelper
     list.join(" ")
   end
 
+  def version_author(version)
+    User.find(version.version_author)
+  end
+
   def split_list(list)
     list.split(/, ?/)
   end
