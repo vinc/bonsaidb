@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
           <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <%= link_to 'Species', species_index_path, class: nav_link_class('species-index') %>
+              <%= link_to 'Species', species_index_path, class: nav_link_class(active: body_class == 'species-index') %>
             </li>
           </ul>
         </div>

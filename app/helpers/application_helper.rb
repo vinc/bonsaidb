@@ -3,12 +3,10 @@ module ApplicationHelper
     "#{controller_path}/#{action_name}".tr("/", "-")
   end
 
-  def nav_link_class(target)
-    if target == body_class
-      "nav-link active"
-    else
-      "nav-link"
-    end
+  def nav_link_class(active: false)
+    list = ["nav-link"]
+    list << "active" if active
+    list.join(" ")
   end
 
   def split_list(list)
