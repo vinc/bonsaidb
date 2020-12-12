@@ -32,6 +32,8 @@ gem 'bootstrap', '~> 5.0.0.alpha3'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 
+gem 'paper_trail'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
