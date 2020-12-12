@@ -1,9 +1,21 @@
 <div class="row my-5">
   <div class="col col-md-8 offset-md-2 my-3">
     <h1 class="display-3 mb-4 text-center">Bonsai Database</h1>
-    <p class="lead">Bonsai is the art of growing small trees in pots that comes from a long tradition in Japan. It requires a lot of technical knowledge and the aim of this project is to maintain an up to date database of the best pratices.</p>
+    <p class="lead">
+      Bonsai is the art of growing small trees in pots.
+      This website is a free crowdsourced database of the knowledge required to successfuly grow them.
+    </p>
   </div>
 </div>
 
-<h2><%= link_to "Common species used in bonsai", species_index_path %></h2>
-<p>The first step to successfully grow for a bonsai is to learn the specific requirements of its species.</p>
+<div class="row">
+  <div class="col">
+    <h2>Learn the art of bonsai</h2>
+    <p>Start with the common <%= link_to "species", species_index_path %> guides.</h2>
+  </div>
+
+  <div class="col">
+    <h2>Contribute your knowledge</h2>
+    <p>Everyone can <%= link_to "sign up", new_user_registration_path %> to improve the database.</h2>
+  </div>
+</div>
