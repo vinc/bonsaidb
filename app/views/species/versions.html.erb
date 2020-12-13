@@ -1,0 +1,16 @@
+<h1>
+  <%= @species.botanical_name %>
+  <small class="text-muted">(versions)</small>
+</h1>
+
+<p>This page has been updated <%= pluralize(@versions.count, "time") %>:</p>
+
+<ul>
+  <% @versions.each do |version| %>
+    <li>
+      <%= link_to species_path(version: version.created_at.to_i) do %>
+        <%= time_tag version.created_at %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

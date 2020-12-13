@@ -1,5 +1,5 @@
 class SpeciesController < ApplicationController
-  before_action :set_species, only: [:show, :edit, :update, :destroy]
+  before_action :set_species, only: [:show, :edit, :update, :destroy, :versions]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -18,6 +18,7 @@ class SpeciesController < ApplicationController
   end
 
   def show
+    @species = @species.paper_trail.version_at(Time.at(params[:version].to_i + 1)) || @species if params[:version]
   end
 
   def new
@@ -64,6 +65,10 @@ class SpeciesController < ApplicationController
       format.html { redirect_to species_index_url, notice: 'Species was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def versions
+    @versions = @species.versions
   end
 
   private
