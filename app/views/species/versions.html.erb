@@ -11,6 +11,7 @@
       <%= link_to species_path(version: version.created_at.to_i) do %>
         <%= time_tag version.created_at %>
       <% end %>
+      by <%= version_author(version).username %>
     </li>
   <% end %>
 </ul>
