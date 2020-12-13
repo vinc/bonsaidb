@@ -32,8 +32,29 @@
   <% end %>
 <% end %>
 
-<p class="mt-5 text-muted">
-    Last <%= link_to "updated", versions_species_path(@species), class: "text-muted" %>
-    on <%= time_tag @species.versions.last.created_at.to_date %>
-    by <%= version_author(@species.versions.last).username %>
+<p class="mt-4 text-muted">
+  Last <%= link_to "updated", versions_species_path(@species), class: "text-muted" %>
+  on <%= time_tag @species.versions.last.created_at.to_date %>
+  by <%= version_author(@species.versions.last).username %>
 </p>
+
+<hr>
+
+<h2>Comments</h2>
+<% @species.comments.each do |comment| %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <strong><%= comment.user.username %></strong> commented on <%= time_tag comment.created_at %>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= comment.body %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<%= form_for [@species, @species.comments.build] do |form| %>
+  <%= form.text_area :body, class: "form-control mb-3", placeholder: "Leave a comment" %>
+  <%= form.submit("Comment", class: "btn btn-primary") %>
+<% end %>

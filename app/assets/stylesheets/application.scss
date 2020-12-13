@@ -14,3 +14,7 @@ $link-hover-decoration: underline;
 .navbar.bg-light {
   border-bottom: solid 1px $card-border-color;
 }
+
+.container {
+  max-width: 45rem;
+}
