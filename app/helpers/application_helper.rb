@@ -13,6 +13,11 @@ module ApplicationHelper
     User.find(version.version_author)
   end
 
+  def link_to_version_author(version)
+    user = User.find(version.version_author)
+    link_to(user.username, user)
+  end
+
   def split_list(list)
     list.split(/, ?/)
   end

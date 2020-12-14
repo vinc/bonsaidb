@@ -35,7 +35,7 @@
 <p class="mt-4 text-muted">
   Last <%= link_to "updated", versions_species_path(@species), class: "text-muted" %>
   on <%= time_tag @species.versions.last.created_at.to_date %>
-  by <%= version_author(@species.versions.last).username %>
+  by <%= link_to_version_author(@species.versions.last) %>
 </p>
 
 <hr>

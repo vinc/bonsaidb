@@ -1,0 +1,7 @@
+<h1><%= @user.username %></h1>
+
+<p>
+  Contributed <%= pluralize(@changes.count, "edit") %>
+  and <%= pluralize(@user.comments.count, "comments") %>
+  since <%= time_tag @user.created_at.to_date %>.
+</p>
