@@ -9,6 +9,19 @@ module ApplicationHelper
     list.join(" ")
   end
 
+  def version_title(version)
+    version.item_type.constantize.find(version.item_id).title
+  rescue ActiveRecord::RecordNotFound
+    nil
+  end
+
+  def version_path(version)
+    item = version.item_type.constantize.find(version.item_id)
+    polymorphic_path(item, version: version.created_at.to_i)
+  rescue ActiveRecord::RecordNotFound
+    nil
+  end
+
   def version_author(version)
     User.find(version.version_author)
   end

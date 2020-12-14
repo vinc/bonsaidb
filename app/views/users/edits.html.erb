@@ -1,0 +1,21 @@
+<h1>Edits by <%= link_to @user.username, @user %></h1>
+
+<ul>
+  <% @edits.each do |edit| %>
+    <li>
+      <%= edit.event.sub(/e$/, "").capitalize %>ed
+
+      <% if version_title(edit) %>
+        <%= link_to version_title(edit), version_path(edit) %>
+      <% else %>
+        <span class="text-muted">a deleted page</span>
+      <% end %>
+
+      on <%= time_tag edit.created_at %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="mt-4 d-flex justify-content-center">
+  <%= paginate @edits %>
+</div>

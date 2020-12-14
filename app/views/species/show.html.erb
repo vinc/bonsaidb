@@ -44,7 +44,7 @@
 <% @species.comments.each do |comment| %>
   <div class="card mb-3">
     <div class="card-header">
-      <strong><%= comment.user.username %></strong> commented on <%= time_tag comment.created_at %>
+      <strong><%= link_to comment.user.username, comment.user, class: "text-dark" %></strong> commented on <%= time_tag comment.created_at %>
     </div>
     <div class="card-body">
       <p class="card-text">

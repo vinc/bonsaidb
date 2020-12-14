@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get 'comments'
+      get 'edits'
+    end
+  end
 
   resources :species do
     resources :comments
