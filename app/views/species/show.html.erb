@@ -11,7 +11,7 @@
   </div>
 <% end %>
 
-<h1><%= @species.botanical_name %></h1>
+<h1><%= title @species.botanical_name %></h1>
 
 <p>
   <%= @species.botanical_name %><% if @species.common_names.present? %>, commonly known as <%= humanize_list(@species.common_names) %>,<% end %>

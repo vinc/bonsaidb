@@ -1,4 +1,18 @@
 module ApplicationHelper
+  def page_meta_tags
+    display_meta_tags(
+      site: "Bonsai Database",
+      separator: "-",
+      reverse: true,
+      canonical: url_for(only_path: false, locale: nil),
+      og: {
+        title: :title,
+        site_name: :site,
+        url: :canonical
+      }
+    )
+  end
+
   def body_class
     "#{controller_path}/#{action_name}".tr("/", "-")
   end
