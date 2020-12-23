@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col">
+    <div class="card">
+      <div class="card-header text-muted"><%= title t('.sign_in') %></div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, required: true, autocomplete: "email", class: "form-control #{"is-invalid" if resource.errors[:email].any?}" %>
+          </div>
+
+          <div class="mb-3">
+            <span class="float-right"><%= link_to t('devise.passwords.new.forgot_your_password'), new_password_path(resource_name) %></span>
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, required: true, autocomplete: "current-password", class: "form-control #{"is-invalid" if resource.errors[:password].any?}" %>
+          </div>
+
+          <!--
+          <% if devise_mapping.rememberable? %>
+            <div class="form-check">
+              <%= f.label :remember_me, class: 'form-check-label' do %>
+                <%= f.check_box :remember_me, class: 'form-check-input' %>
+                <%= t('.remember_me') %>
+              <% end %>
+            </div>
+          <% end %>
+          -->
+
+          <div class="">
+            <%= f.submit t('.sign_in'), class: 'btn btn-primary btn-block' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

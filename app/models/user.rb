@@ -11,4 +11,8 @@ class User < ApplicationRecord
   enum role: [:member, :editor, :admin]
 
   has_many :comments
+
+  USERNAME_PATTERN = "[0-9A-Za-z][0-9A-Za-z-]{1,30}[0-9A-Za-z]".freeze
+
+  validates :username, presence: true, uniqueness: true, format: /\A#{USERNAME_PATTERN}\z/
 end
