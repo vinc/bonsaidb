@@ -18,22 +18,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'turbolinks', '~> 5.2.0'
-gem 'sprockets', '~> 4'
-gem 'sprockets-rails', require: 'sprockets/railtie'
-
-gem 'friendly_id', '~> 5.4.0'
-gem 'kaminari'
-gem 'pundit'
-
-gem 'jquery-rails'
-gem 'bootstrap', '~> 5.0.0.alpha3'
-
-gem 'devise'
-gem 'devise-bootstrap-views', '~> 1.0'
-
-gem 'paper_trail'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -54,5 +38,15 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
+gem 'friendly_id', '~> 5.4.0'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'meta-tags'
+gem 'paper_trail'
+gem 'pundit'
+gem 'sprockets', '~> 4'
+gem 'sprockets-rails', require: 'sprockets/railtie'
+gem 'turbolinks', '~> 5.2.0'
