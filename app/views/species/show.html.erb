@@ -42,9 +42,10 @@
 
 <h2>Comments</h2>
 <% @species.comments.each do |comment| %>
-  <div class="card mb-3">
+  <div class="card mb-3" id="comment-<%= comment.id %>">
     <div class="card-header">
-      <strong><%= link_to comment.user.username, comment.user, class: "text-dark" %></strong> commented on <%= time_tag comment.created_at %>
+      <strong><%= link_to comment.user.username, comment.user, class: "text-dark" %></strong>
+      commented on <%= link_to(polymorphic_path(comment.commentable, anchor: "comment-#{comment.id}"), class: "text-reset") { time_tag comment.created_at } %>
     </div>
     <div class="card-body">
       <p class="card-text">

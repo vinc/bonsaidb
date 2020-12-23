@@ -4,7 +4,7 @@
   <% @comments.each do |comment| %>
     <li>
       Commented in <%= link_to comment.commentable.title, comment.commentable %>
-      on <%= time_tag comment.created_at %>
+      on <%= link_to(polymorphic_path(comment.commentable, anchor: "comment-#{comment.id}"), class: "text-reset") { time_tag comment.created_at } %>
     </li>
   <% end %>
 </ul>
